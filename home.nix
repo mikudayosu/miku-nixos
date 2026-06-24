@@ -9,6 +9,8 @@
   home.packages = with pkgs; [ # 유저패키지
     btop
     fastfetch
+    tree
+    gh
   ];
 
   programs.home-manager.enable = true;

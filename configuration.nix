@@ -67,10 +67,7 @@
 
   users.users.miku = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.    
   };
 
   # programs.firefox.enable = true;
@@ -78,10 +75,26 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    # 편집
     nano
+    
+    # 네트워크 도구들
     wget
+    curl
+
+    #하드웨어 관련
+    usbutils
+    pciutils
+    htop
+    lshw
+
+    # 디스크 관련
+    btrfs-progs
+    smartmontools
+    util-linux
+    
+    # git
     git
-    gh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
