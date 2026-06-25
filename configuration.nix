@@ -71,6 +71,30 @@
   };
 
   # programs.firefox.enable = true;
+  
+  # wayland compositor
+  programs.niri.enable = true ;
+  
+  # display manager
+  #  services.displayManager.plasma-login-manager.enable = true; ㅗㅗㅗㅗ
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time";
+        user = "greeter";
+      };
+    };
+  };
+  
+  #fonts
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
+  ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).

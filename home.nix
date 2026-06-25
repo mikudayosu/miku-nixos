@@ -11,6 +11,9 @@
     fastfetch
     tree
     gh
+    
+    alacritty
+    fuzzel
   ];
 
   programs.home-manager.enable = true;
