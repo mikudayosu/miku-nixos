@@ -48,8 +48,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -70,7 +68,8 @@
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.    
   };
 
-  # programs.firefox.enable = true;
+  # firefox browser
+  programs.firefox.enable = true;
   
   # wayland compositor
   programs.niri.enable = true ;
@@ -87,6 +86,14 @@
     };
   };
   
+  # flatpak
+  services.flatpak.enable = true ;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
+
   #fonts
   fonts.packages = with pkgs; [
     noto-fonts

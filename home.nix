@@ -5,16 +5,11 @@
   
   home.stateVersion = "26.05";
   
+  # programs.firefox.enable = true;
   
-  home.packages = with pkgs; [ # 유저패키지
-    btop
-    fastfetch
-    tree
-    gh
-    
-    alacritty
-    fuzzel
+  imports =[
+    ./home/packages.nix
   ];
-
+  
   programs.home-manager.enable = true;
 }
