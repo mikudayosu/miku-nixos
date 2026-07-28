@@ -63,12 +63,21 @@
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.    
   };
 
+  # unfree programs
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-unwrapped"
+  ];
+
   # firefox browser
   programs.firefox.enable = true;
   
   # wayland compositor
-  programs.niri.enable = true ;
-  
+  programs.niri.enable = true;
+
+  # steam
+  programs.steam.enable = true;  
+
   # display manager
   #  services.displayManager.plasma-login-manager.enable = true; ㅗㅗㅗㅗ
   services.greetd = {
@@ -82,7 +91,12 @@
   };
   
   # flatpak
-  services.flatpak.enable = true ;
+  services.flatpak.enable = true;
+
+  # file manager
+  services.udisks2.enable = true; 
+  services.gvfs.enable = true;
+  
 
   xdg.portal = {
     enable = true;
@@ -121,6 +135,12 @@
     
     # git
     git
+    
+    # xwayland
+    xwayland-satellite
+
+    # file manager
+    nautilus
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
