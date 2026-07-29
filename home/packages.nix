@@ -7,6 +7,7 @@
     gh
    
     alacritty
-    fuzzel  
+    fuzzel
+    protonplus
   ];
 }
