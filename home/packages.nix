@@ -8,6 +8,13 @@
    
     alacritty
     fuzzel
+   
+    #game
     protonplus
+    gamescope
+    mangohud
+
+    #record
+    wl-screenrec
   ];
 }

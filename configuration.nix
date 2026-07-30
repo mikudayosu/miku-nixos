@@ -60,7 +60,7 @@
 
   users.users.miku = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.    
+    extraGroups = [ "wheel" "networkmanager" "adbusers" ]; # Enable ‘sudo’ for the user.    
   };
 
   # unfree programs
@@ -77,6 +77,9 @@
 
   # steam
   programs.steam.enable = true;  
+
+  # adb
+  # programs.adb.enable = true;
 
   # display manager
   #  services.displayManager.plasma-login-manager.enable = true; ㅗㅗㅗㅗ
@@ -136,11 +139,15 @@
     # git
     git
     
+    android-tools    
+
     # xwayland
     xwayland-satellite
 
     # file manager
     nautilus
+
+    ffmpeg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
